@@ -74,6 +74,7 @@ Learnings
 - Ensure that the results are valid and test outputting them first (tested with a classifier and it outputted one result since the classification accuracy is high, be careful and actually check the raw results first)
 - Pickle file usage to import module (note in the app file, to change location when calling the database). Resolved with creating module structure for the proj_methods used relating to tokenize and the custom transformers.
 - Antoher issue is with too large file. Classifier with KNN has large file so resolving with git lfs
+- Pickle file issues with setting up for Heroku upload and deploy as running locally works but gunicorn and deploy fails
 
 ## Results<a name="results"></a>
 Output results can be found at proj-disaster-resp-test1.herokuapp.com

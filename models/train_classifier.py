@@ -30,6 +30,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 
+import joblib
+
 def load_data(database_filepath):
     """ Load data from database file path and then return the appropriate information in separate columns
     Input:
@@ -182,6 +184,10 @@ def build_model():
         # Tested with RandomForest and KNN. Choose to go with KNN with these parameters optimised
         'clf__estimator__n_neighbors': [5,10],
         'clf__estimator__leaf_size': [30, 50]
+
+        # For testing
+        # 'clf__estimator__n_neighbors': [5],
+        # 'clf__estimator__leaf_size': [50]
     }
 
     # Run the pipeline with GridSearchCV to find the most optimal parameters and return this model
@@ -236,8 +242,9 @@ def save_model(model, model_filepath):
     # Try and catch the error to see whether it will fail to open or create or not
     try:
         # Creates and saves the inputted model as a pickle file
-        with open(model_filepath, 'wb') as file:  
-            pickle.dump(model, file)
+        # with open(model_filepath, 'wb') as file:  
+        #     pickle.dump(model, file)
+        joblib.dump(model, model_filepath)
         print("Saves file {} successfully as a model pickle file".format(model_filepath))
 
     except Exception as e:

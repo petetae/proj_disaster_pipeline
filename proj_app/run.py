@@ -9,14 +9,33 @@ from flask import render_template, request, jsonify
 from plotly.graph_objs import Bar, Pie, Table
 import joblib
 from sqlalchemy import create_engine
+import pickle
+
+from proj_methods_pete2.proj_methods_pete import tokenize, HelpWordExtractor, WordLengthExtractor, SentimentSentenceExtractor
+
+# from proj_methods_pete2.proj_methods_pete import tokenize
+# from proj_methods_pete import tokenize
+# from proj_methods_pete import tokenize
+# tokenize, HelpWordExtractor, WordLengthExtractor, SentimentSentenceExtractor
+# from proj_methods import tokenize, HelpWordExtractor, WordLengthExtractor, SentimentSentenceExtractor
 
 # # load data v2
 engine = create_engine('sqlite:///data/DisasterResponse.db')
 df = pd.read_sql_table('data/DisasterResponse.db', engine)
 
 # load model v2
-model = joblib.load("models/classifier-knn.pkl")
+# model = joblib.load("models/classifier-knn.pkl")
+model = joblib.load("models/classifier-testknn.pkl")
+# print(__name__)
 
+# with open("models/classifier-knn.pkl"  , 'rb') as file:  
+#     model = pickle.load(file)
+
+
+
+# Load the Model back from file
+# with open("models/classifier-knn.pkl"  , 'rb') as file:  
+#     model = pickle.load(file)
 
 # index webpage displays cool visuals and receives user input text for model
 @app.route('/')
@@ -140,9 +159,4 @@ def go():
         classification_result=classification_results
     )
 
-# # Uncomment to be able to python run.py
-# def main():
-#     app.run(host='0.0.0.0', port=3001, debug=True)
-
-# if __name__ == '__main__':
-#     main()
+    

@@ -1,5 +1,4 @@
-from proj_methods import tokenize
-from proj_methods import HelpWordExtractor, WordLengthExtractor, SentimentSentenceExtractor
+from proj_methods_pete2.proj_methods_pete import tokenize, HelpWordExtractor, WordLengthExtractor, SentimentSentenceExtractor
 from proj_app import app
 
 # Comment out this line to run local
