@@ -73,9 +73,10 @@ Learnings
 - Creation of multiple transforms is useful in pipelines to aggregate and run different classifications together for analysis
 - Ensure that the results are valid and test outputting them first (tested with a classifier and it outputted one result since the classification accuracy is high, be careful and actually check the raw results first)
 - Pickle file usage to import module (note in the app file, to change location when calling the database). Resolved with creating module structure for the proj_methods used relating to tokenize and the custom transformers.
+- Antoher issue is with too large file. Classifier with KNN has large file so resolving with git lfs
 
 ## Results<a name="results"></a>
-Output results can be found at ___ website ____.
+Output results can be found at proj_disaster_response_pete_test1.herokuapp.com
 For more information, check the Jupyter notebook files or contact the project's author.
 
 ### Local setup instructions <a name="local_setup"></a>
