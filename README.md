@@ -76,7 +76,7 @@ Learnings
 - Antoher issue is with too large file. Classifier with KNN has large file so resolving with git lfs
 
 ## Results<a name="results"></a>
-Output results can be found at proj_disaster_response_pete_test1.herokuapp.com
+Output results can be found at proj-disaster-resp-test1.herokuapp.com
 For more information, check the Jupyter notebook files or contact the project's author.
 
 ### Local setup instructions <a name="local_setup"></a>
